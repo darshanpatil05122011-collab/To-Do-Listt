@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/page_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/card_bg"
+            android:padding="24dp"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/dateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/rule_red"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:letterSpacing="0.1"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's list"
+                android:textColor="@color/ink"
+                android:textSize="26sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/statusLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nothing on the page yet."
+                android:textColor="@color/ink_light"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/tabTimerBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TIMER"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:background="@color/ink"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp" />
+
+                <Button
+                    android:id="@+id/tabStopwatchBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="STOPWATCH"
+                    android:textSize="12sp"
+                    android:textColor="@color/ink_light"
+                    android:background="@android:color/transparent"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/timerPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/timerDisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25:00"
+                        android:textSize="30sp"
+                        android:textColor="@color/ink" />
+
+                    <Button
+                        android:id="@+id/timerStartBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="▶"
+                        android:textColor="@color/white"
+                        android:background="@color/ink" />
+
+                    <Button
+                        android:id="@+id/timerResetBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="⟲"
+                        android:textColor="@color/ink_light"
+                        android:background="@color/card_bg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/preset5Btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5m"
+                        android:textSize="12sp"
+                        android:textColor="@color/ink_light"
+                        android:background="@color/card_bg" />
+
+                    <Button
+                        android:id="@+id/preset15Btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="15m"
+                        android:textSize="12sp"
+                        android:textColor="@color/ink_light"
+                        android:background="@color/card_bg" />
+
+                    <Button
+                        android:id="@+id/preset25Btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="25m"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:background="@color/ink" />
+
+                    <EditText
+                        android:id="@+id/customMinutesInput"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:inputType="number"
+                        android:text="25"
+                        android:textSize="12sp"
+                        android:textColor="@color/ink"
+                        android:gravity="center"
+                        android:background="@color/card_bg" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/timerMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time's up. Nice focus block."
+                    android:textColor="@color/rule_red"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/stopwatchPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/stopwatchDisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00.00"
+                        android:textSize="30sp"
+                        android:textColor="@color/ink" />
+
+                    <Button
+                        android:id="@+id/stopwatchStartBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="▶"
+                        android:textColor="@color/white"
+                        android:background="@color/ink" />
+
+                    <Button
+                        android:id="@+id/stopwatchLapBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="⟲"
+                        android:textColor="@color/ink_light"
+                        android:background="@color/card_bg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lapsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/taskRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp">
+
+                <EditText
+                    android:id="@+id/taskInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Add something to do..."
+                    android:textColor="@color/ink"
+                    android:background="@color/card_bg" />
+
+                <Button
+                    android:id="@+id/addTaskBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:background="@color/ink" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1632061235169740/1356731114" />
+
+</LinearLayout>
